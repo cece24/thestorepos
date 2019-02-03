@@ -6,6 +6,7 @@ const port = 3000
 const users = require('./users')
 const items = require('./items')
 const paymentMethods = require('./payment-methods')
+const categories = require('./categories')
 
 app.use(bodyParser.json())
 app.use(
@@ -26,6 +27,9 @@ app.get('/items/:id', items.getItemById)
 
 app.get('/paymentmethods', paymentMethods.getPaymentMethods)
 app.get('/paymentmethods/:id', paymentMethods.getPaymentMethodById)
+
+app.get('/categories', categories.getCategories)
+app.get('/categories/:id', categories.getCategoryById)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}`)
