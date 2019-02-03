@@ -1,7 +1,9 @@
 #The Store POS
 *Cecilia Wong*
 
-##Database Setup
+##Project Setup
+
+1. Database:
 `psql -d postgres -f thestore_cece.sql -U <user_name>`
 
 This command will add a database with tables for:
@@ -11,3 +13,9 @@ This command will add a database with tables for:
 * payment_methods
 * orders
 * order_items
+
+2. In the cloned repo, open the `.sample.env` file and enter your Postgres user credentials 
+
+3. Rename the file `.sample.env` to `.env`
+
+4. `npm install`
