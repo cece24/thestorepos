@@ -74,6 +74,10 @@ CREATE TABLE orders (
   points_earned INTEGER
 );
 
+INSERT INTO orders (user_id, total, payment_method_id, points_earned)
+  VALUES
+    ('1', '22.50', '4', '23');
+
 
 /* Order Items Table */
 CREATE TABLE order_items (
@@ -82,3 +86,10 @@ CREATE TABLE order_items (
   quantity INTEGER,
   order_id INTEGER REFERENCES orders (id)
 );
+
+INSERT INTO order_items (item_id, quantity, order_id)
+  VALUES
+    ('1', '2', '1'),
+    ('2', '1', '1'),
+    ('6', '2', '1'),
+    ('7', '1', '1');
