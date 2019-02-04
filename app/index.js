@@ -9,6 +9,7 @@ const paymentMethods = require('./payment-methods')
 const categories = require('./categories')
 const orders = require('./orders')
 const orderItems = require('./order-items')
+const orderReceipts = require('./order-receipts')
 
 app.use(bodyParser.json())
 app.use(
@@ -55,6 +56,9 @@ app.get('/orders/:orderId/items', orderItems.getOrderItemsByOrderId)
 app.post('/orders/:orderId/items', orderItems.createOrderItem)
 app.put('/orders/:orderId/items/:orderItemId', orderItems.updateOrderItemQuantity)
 app.delete('/orders/:orderId/items/:orderItemId', orderItems.deleteOrderItem)
+
+// Order Receipt
+app.get('/orders/:orderId/receipt', orderReceipts.getOrderReceipt)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}`)
