@@ -53,16 +53,17 @@ INSERT INTO items (name, price, category_id)
 /* Payment Methods Table */
 CREATE TABLE payment_methods (
   ID SERIAL PRIMARY KEY,
-  name VARCHAR
+  name VARCHAR,
+  points_per_dollar DECIMAL
 );
 
-INSERT INTO payment_methods (name)
+INSERT INTO payment_methods (name, points_per_dollar)
   VALUES
-    ('Cash'),
-    ('Debit Card'),
-    ('Credit Card'),
-    ('The Store Gold Card'),
-    ('The Store Platinum Card');
+    ('Cash', '0.5'),
+    ('Debit Card', '0.5'),
+    ('Credit Card', '0.5'),
+    ('The Store Gold Card', '1'),
+    ('The Store Platinum Card', '1.5');
 
 
 /* Orders Table */
