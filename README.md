@@ -1,7 +1,7 @@
-#The Store POS
+# The Store POS
 *Cecilia Wong*
 
-##Project Setup
+## Project Setup
 
 1. Database:
 `psql -d postgres -f thestore_cece.sql -U <user_name>`
