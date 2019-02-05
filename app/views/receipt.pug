@@ -1,0 +1,17 @@
+html
+  head
+    title=title
+  body
+    h1 The Store
+    h4 Thanks for shopping with us!
+    br
+    for category in data.categories
+      h3 #{category.name}
+      for item in category.items
+        p #{item.quantity} #{item.name} @ $#{item.price}/ea. $#{item.total}
+    br
+    h4 Total: $#{data.total}
+    br
+    h4 Payment method: #{data.payment_method.name}
+    h4 The Store Points earned: #{data.points_earned}
+    br

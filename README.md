@@ -19,3 +19,8 @@ This command will add a database with tables for:
 3. Rename the file `.sample.env` to `.env`
 
 4. `npm install`
+
+## Receipt Printout
+
+Order ID 1 has been set up with dummy data to show a receipt printout:
+`http://localhost:3000/orders/1/receipt`
