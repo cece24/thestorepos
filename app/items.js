@@ -1,23 +1,11 @@
-const pool = require('./db')
+const db = require('./queries')
 
-const getItems = (request, response) => {
-  pool.query('SELECT * FROM items ORDER BY id ASC', (error, results) => {
-    if(error) {
-      throw error
-    }
-    response.status(200).json(results.rows)
-  })
+const getItems = async() => {
+  return await db.any('SELECT * FROM items ORDER BY id ASC')
 }
 
-const getItemById = (request, response) => {
-  const id = parseInt(request.params.id)
-
-  pool.query('SELECT * FROM items WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.status(200).json(results.rows)
-  })
+const getItemById = async(id) => {
+  return await db.any('SELECT * FROM items WHERE id = $1', [id])
 }
 
 module.exports = {
