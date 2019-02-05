@@ -79,28 +79,9 @@ const getReceipt = async(orderId) => {
 
   await orders.updateOrder(orderId, orderTotal, paymentMethodId, pointsEarned)
 
-  // 15. Send all info in receipt
-
-  console.log(receiptData)
-
   return await receiptData
 }
 
 module.exports = {
   getReceipt,
 }
-
-// ======
-// BAKERY
-// 1 Bread $2.50
-						
-// PRODUCE
-// 2 Oranges $3.00
-						
-// Total: $5.50
-						
-// Payment method: Cash 
-// The Store Points earned: 3 
-// ======
-
-
