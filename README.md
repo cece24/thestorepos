@@ -24,3 +24,7 @@ This command will add a database with tables for:
 
 Order ID 1 has been set up with dummy data to show a receipt printout:
 `http://localhost:3000/orders/1/receipt`
+
+
+## Project Planning
+* Rough reference document used for planning and design [here.](https://docs.google.com/document/d/1ijbDgIWEwX8siLl8S8Gw4U38YnA1gRDcmGQgRAdmcpA/edit?usp=sharing)
