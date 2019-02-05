@@ -15,6 +15,8 @@ app.use(
   })
 )
 
+app.set('view engine', 'pug')
+
 // General 
 app.get('/', (request, response) => {
   response.json({ info: 'Welcome to The Store!'})

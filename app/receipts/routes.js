@@ -9,11 +9,10 @@ router.get('/:orderId/receipt', (req, res, next) => {
     receipts.getReceipt(orderId)
       .then(data => {
         res.status(200)
-          .json({
-            status: 'success',
-            data: data,
-            message: `Retrieved receipt for order with ID: ${orderId}`
-          })
+          .render('receipt', {
+              data
+            }
+          )
       })
   } catch(err) {
       console.log(err)
