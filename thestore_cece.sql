@@ -53,16 +53,17 @@ INSERT INTO items (name, price, category_id)
 /* Payment Methods Table */
 CREATE TABLE payment_methods (
   ID SERIAL PRIMARY KEY,
-  name VARCHAR
+  name VARCHAR,
+  points_per_dollar DECIMAL
 );
 
-INSERT INTO payment_methods (name)
+INSERT INTO payment_methods (name, points_per_dollar)
   VALUES
-    ('Cash'),
-    ('Debit Card'),
-    ('Credit Card'),
-    ('The Store Gold Card'),
-    ('The Store Platinum Card');
+    ('Cash', '0.5'),
+    ('Debit Card', '0.5'),
+    ('Credit Card', '0.5'),
+    ('The Store Gold Card', '1'),
+    ('The Store Platinum Card', '1.5');
 
 
 /* Orders Table */
@@ -74,6 +75,10 @@ CREATE TABLE orders (
   points_earned INTEGER
 );
 
+INSERT INTO orders (user_id, total, payment_method_id, points_earned)
+  VALUES
+    ('1', '22.50', '4', '23');
+
 
 /* Order Items Table */
 CREATE TABLE order_items (
@@ -82,3 +87,10 @@ CREATE TABLE order_items (
   quantity INTEGER,
   order_id INTEGER REFERENCES orders (id)
 );
+
+INSERT INTO order_items (item_id, quantity, order_id)
+  VALUES
+    ('1', '2', '1'),
+    ('2', '1', '1'),
+    ('6', '2', '1'),
+    ('7', '1', '1');
